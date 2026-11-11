@@ -11,7 +11,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, financialData } = req.body;
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.8-flash" });
     
     const systemPrompt = `คุณคือผู้ช่วยทางการเงินของแอป Ayase Bank
 ข้อมูลการเงินปัจจุบันของผู้ใช้: ${JSON.stringify(financialData || {})}
